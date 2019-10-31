@@ -17,6 +17,7 @@ export class ClassroomComponent implements OnInit {
       this.classrooms = response;
     }, error => {
       console.log( Error);
+      console.log( Error);
     });
   }
 
