@@ -19,7 +19,6 @@ constructor() { }
     );
     }
     success(message: string) {
-      alertify.success('Login success');
       alertify.success(message);
     }
     error(message: string) {
