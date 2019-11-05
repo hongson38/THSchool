@@ -9,11 +9,11 @@ export class AlertifyService {
 
 constructor() { }
   confirm(message: string, okCallback: () => any) {
+    // tslint:disable-next-line: only-arrow-functions
     alertify.confirm(message, function(e) {
       if (e) {
           okCallback();
       } else {
-
       }
     }
     );
