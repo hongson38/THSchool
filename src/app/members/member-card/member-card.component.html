@@ -6,6 +6,6 @@
     <h6 class="card-title text-center mb-1"><i class="fa fa-user">
     {{user.username}}:   {{user.city}} , {{user.age}}
     </i></h6>
-    <p class="card-text text-muted text-center">{{user.gender}}</p>
+    <p class="card-text text-muted text-center" [routerLink]="['/members/', user.userId]">{{user.username}}</p>
   </div>
 </div>
