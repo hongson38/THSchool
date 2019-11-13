@@ -40,6 +40,7 @@
   </div>
 </div>
 <a [routerLink]="[ '/home' ]" >Link</a><br>
+<a [routerLink]="[ '/path' ]" routerLinkActive="active">name</a>
 <a [routerLink]="[ '/home' ]"  routerLinkActive #rla="routerLinkActive">
   Bob  {{user.introduction=="son"? '(already open)' : ''}} 
 </a>
@@ -47,7 +48,8 @@
 router
 <br>
 
-<router-outlet></router-outlet>
+<a [routerLink]="[ '/home']" skipLocationChange>redirect but not change url</a>
+
 <router-outlet name='left'>Sondeptrai</router-outlet>
 <router-outlet name='right'>Sonquadeptrai</router-outlet>
 

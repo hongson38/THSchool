@@ -8,6 +8,7 @@ import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
 
 export const appRoutes: Routes = [
+    {path: '', component: HomeComponent},
     {path: 'home', component: HomeComponent},
     {
      path: '',
@@ -20,13 +21,13 @@ export const appRoutes: Routes = [
         {path: 'lists', component: ListsComponent},
                 ]
     },
-    {
-        path: '',
-        canDeactivate: [AuthGuard],
-        children: [
-            {   path: 'listssvTest', component: ListsComponent}
-                  ]
-    },
+    // {
+    //     path: '',
+    //     canDeactivate: [AuthGuard],
+    //     children: [
+    //         {   path: 'listssvTest', component: ListsComponent, data : {role: 'admin'}}
+    //               ]
+    // },
     {path: '**', redirectTo: 'home', pathMatch: 'full'},
 ];
 

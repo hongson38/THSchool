@@ -1,7 +1,8 @@
 import { Photo } from './photo';
+import { SourceNode } from 'source-list-map';
 
 export interface User {
-    userId: number;
+   userId: number;
     username: string;
     age: number;
     photoUrl: string;
