@@ -25,4 +25,11 @@ constructor(private http: HttpClient) {
   getUser(id): Observable<User> {
     return this.http.get<User>(this.baseUrl + 'users/' + id);
   }
+  // add service de lay danh sach order by id user ,,thay User[] thanh Order[] neu sau nay co bang order
+  getListOrder(id): Observable<User[]> {
+    return this.http.get<User[]>(this.baseUrl + 'seelistorder/' + id);
+  }
+  getOneUser(id): Observable<User> {
+    return this.http.get<User>(this.baseUrl + 'getoneuserbyuserid/' + id);
+  }
 }

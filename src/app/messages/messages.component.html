@@ -1,3 +1,26 @@
-<p>
-  messages works!
-</p>
+<div style="margin-left: 30%;">
+    <select  class="mdb-select md-form col-md-4 form-control" [(ngModel)]="selectedOption"
+    (change)="onChange($event.target.value)">
+      <option disabled >Choose your User</option>
+      <option *ngFor="let item of users" value={{item.userId}} >{{item.username}}</option>
+    </select>
+    <br>
+    <p>List user (ListoderbyidUser)</p>
+    <div *ngFor="let item of listOrderByUser01">
+      <strong>  {{item.userId}}</strong>
+    </div>
+ </div>
+ 
+<br>
+<br>
+
+ <div style="margin-left: 30%;">
+    <select formControlName="name123" class="mdb-select md-form col-md-4 form-control" [(ngModel)]="selectedOption2"
+    (change)="onChange1($event.target.value)">
+      <option  disabled>Choose your User</option>
+      <option *ngFor="let item of users" value={{item.userId}} >{{item.username}}</option>
+    </select>
+    <br>
+    <p> Username: {{ oneUserResponse.username }} </p>
+    <p> City : {{oneUserResponse.city}}</p>
+ </div>
