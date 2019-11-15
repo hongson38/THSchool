@@ -1,0 +1,59 @@
+<p>
+  lists User
+</p>
+
+<div>
+    <form (ngSubmit)="updateMesssages()" #loginForm123="ngForm" >
+        <input type="text" placeholder="Number one" name="model.b" [(ngModel)]="model.b" class="form-control col-md-6" ><br>
+        <input type="text" placeholder="Number two" name="model.a" [(ngModel)]="model.a" class="form-control col-md-6" ><br>
+        <button type="submit" class="btn btn-success">Add</button>
+        </form>
+        <br><br>
+</div>
+
+<p [hidden]="hideElement">Result: {{result}}</p>
+
+
+<select class="custom-select col-md-4" >
+    <option value="" disabled >Choose your city</option>
+    <option>New York</option>
+    <option>Ha Noi</option>
+    <option>Vinh</option>
+    <option>Da Nang</option>
+    <option>Ho Chi Minh </option>
+ </select>
+ <button type="submit" class="btn btn-danger">Submit</button>
+ <br>
+ <br>
+ <br>
+ <br>
+ <!-- <div style="margin-left: 30%;">
+    <form [formGroup]="listCityForm" (ngSubmit)="onSubmit()" >
+        <select formControlName="name" class="mdb-select md-form col-md-4 form-control">
+          <option disabled>Choose your city</option>
+          <option *ngFor="let item of listCity">{{item}}</option>
+        </select>
+        <br>
+        <button class="btn btn-primary">Submit</button>
+      </form>
+ </div> -->
+ {{provinceName}}
+ <!-- <div *ngFor="let item of users">
+  {{item.username}}
+ </div> -->
+
+ <div style="margin-left: 30%;">
+    <form [formGroup]="listUser" (ngSubmit)="onSubmit()" >
+        <select formControlName="name" class="mdb-select md-form col-md-4 form-control" [(ngModel)]="selectedOption">
+          <option disabled>Choose your User</option>
+          <option *ngFor="let item of users" value={{item.userId}} >{{item.username}}</option>
+        </select>
+        <br>
+        <button class="btn btn-primary">Submit</button>
+      </form>
+ </div>
+
+
+
+
+    
