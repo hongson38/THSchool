@@ -7,6 +7,9 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { MessagesComponent } from './messages/messages.component';
+import { UpdateInforComponent } from './updateInfor/updateInfor.component';
+import { MemberEditResolver } from './_resolvers/member-edit.resolver';
+import { DeletelistuserComponent } from './deletelistuser/deletelistuser.component';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -20,6 +23,8 @@ export const appRoutes: Routes = [
         {path: 'members/:id', component: MemberDetailComponent, resolve: {user: MemberDetailResolver}},
         {path: 'messages', component: MessagesComponent},
         {path: 'lists', component: ListsComponent},
+        {path: 'deletelistuser', component: DeletelistuserComponent, resolve: {users: MemberListResolver} },
+        {path: 'updateInfor', component: UpdateInforComponent, resolve: {user: MemberEditResolver}},
                 ]
     },
     // {

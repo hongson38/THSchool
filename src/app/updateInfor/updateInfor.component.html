@@ -1,0 +1,65 @@
+<p>
+  updateInfor works!
+</p>
+
+
+
+<p>{{user.username}}</p>
+<p>{{user.city}}</p>
+
+<!-- <div>
+    <form class="col-md-6" (ngSubmit)="onSubmitUpdate()" [formGroup]="editForm">
+        <label for="inputUsername">Username</label>
+        <input type="text"   id="inputUsername"  [(ngModel)]="viewModel.username" 
+         value="{{user.username}}" class="form-control"><br>
+        <label for="inputCity">City</label>
+        <input type="text"  [(ngModel)]="viewModel.city" id="inputCity" name="city" value="{{user.city}}" class="form-control"><br>
+        <label for="inputIntroduction">Introduction</label>
+        <input type="text" name="introduction"  [(ngModel)]="viewModel.introduction" id="inputIntroduction"  value="{{user.introduction}}" class="form-control"><br>
+        <label for="inputGender">Gender</label>
+        <input type="text" name="gender"  id="inputGender" [(ngModel)]="viewModel.gender" value="{{user.gender}}" class="form-control"><br>
+        <button type="submit" class="btn btn-success" style="margin-left: 30px;">UPDATE</button>
+    </form>
+</div> -->
+
+ <div>
+    <form class="col-md-6" (ngSubmit)="onSubmitUpdate()"  >
+        <label for="inputCity">City</label>
+        <input type="text"   id="inputCity" [ngModelOptions]="{standalone: true}" value="{{user.city}}"  [(ngModel)]="user.city" class="form-control"><br>
+        <label for="inputIntroduction">Introduction</label>
+        <input type="text" [(ngModel)]="user.introduction" [ngModelOptions]="{standalone: true}"   id="inputIntroduction"  value="{{user.introduction}}" class="form-control"><br>
+        <label for="inputGender">Gender</label>
+        <input type="text" [(ngModel)]="user.gender"  [ngModelOptions]="{standalone: true}"  id="inputGender"  value="{{user.gender}}" class="form-control"><br>
+        <button type="submit" class="btn btn-success" style="margin-left: 30px;">UPDATE</button>
+    </form>
+</div> 
+
+
+
+<!-- <div>
+    <form class="col-md-6" (ngSubmit)="onSubmitUpdate()"  >
+        <label for="inputCity">City</label>
+        <input type="text"   id="inputCity" value="{{user.city}}"  [(ngModel)]="user.city" class="form-control"><br>
+        <label for="inputIntroduction">Introduction</label>
+        <input type="text" [(ngModel)]="user.introduction"    id="inputIntroduction"  value="{{user.introduction}}" class="form-control"><br>
+        <label for="inputGender">Gender</label>
+        <input type="text" [(ngModel)]="user.gender"    id="inputGender"  value="{{user.gender}}" class="form-control"><br>
+        <button type="submit" class="btn btn-success" style="margin-left: 30px;">UPDATE</button>
+    </form>
+</div> -->
+
+
+<!-- <div>
+    <form class="col-md-6" (ngSubmit)="onSubmitUpdate()" [formGroup]="editForm">
+        <label for="inputUsername">Username</label>
+        <input type="text"   id="inputUsername" 
+      value="{{user.username}}" class="form-control"><br>
+        <label for="inputCity">City</label>
+        <input type="text"   id="inputCity" name="city" value="{{user.city}}" class="form-control"><br>
+        <label for="inputIntroduction">Introduction</label>
+        <input type="text" name="introduction"   id="inputIntroduction"  value="{{user.introduction}}" class="form-control"><br>
+        <label for="inputGender">Gender</label>
+        <input type="text" name="gender"  id="inputGender" value="{{user.gender}}" class="form-control"><br>
+        <button type="submit" class="btn btn-success" style="margin-left: 30px;">UPDATE</button>
+    </form>
+</div> -->

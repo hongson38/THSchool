@@ -27,6 +27,9 @@ import { MemberCardComponent } from './members/member-card/member-card.component
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
+import { UpdateInforComponent } from './updateInfor/updateInfor.component';
+import { MemberEditResolver } from './_resolvers/member-edit.resolver';
+import { DeletelistuserComponent } from './deletelistuser/deletelistuser.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -45,20 +48,22 @@ export function tokenGetter() {
       MessagesComponent,
       MemberCardComponent,
       MemberDetailComponent,
-      MemberListComponent
+      MemberListComponent,
+      UpdateInforComponent,
+      DeletelistuserComponent
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
       FormsModule,
-      // import to show dropdown list in listComponent, documnet to redirect action in ts
+      // importtoshowdropdownlistinlistComponent,
       ReactiveFormsModule,
 
       TabsModule.forRoot(),
       BsDropdownModule.forRoot(),
       RouterModule.forRoot(appRoutes),
-   //   RouterModule.forChild(appRoutes),
+   // RouterModule.forChild(appRoutes),
       JwtModule.forRoot({
          config: {
             tokenGetter,
@@ -74,7 +79,8 @@ export function tokenGetter() {
       AuthGuard,
       UserService,
       MemberDetailResolver,
-      MemberListResolver
+      MemberListResolver,
+      MemberEditResolver
    ],
    bootstrap: [
       AppComponent
