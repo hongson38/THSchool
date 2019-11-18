@@ -1,3 +1,27 @@
 <p>
   deletelistuser works!
 </p>
+<div>
+  <form  (ngSubmit)="submitDelete()" [formGroup]="myForm">
+      <table class="table table-bordered" style="text-align: center;">
+          <tr >
+            <td >User</td>
+            <td >Delete</td>
+          </tr>
+          <tbody>
+            <tr *ngFor="let item of users">
+              <td >{{item.username}}</td>
+              <td style="text-align: center;"> <input class="form-control" 
+                type="checkbox" name="{{item.userId}}" class="form-check-input" id="exampleCheck1" value={{item.userId}}>
+               </td>
+               <td style="text-align: center;"> <input class="form-control" 
+                type="checkbox" (change)="onChange(item.userId, $event.target.checked)">
+               </td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="submit"> Delete </button>
+  </form>
+  <p *ngFor="let item of listIdUser">{{item}}
+  </p>
+</div>
