@@ -55,6 +55,7 @@ export class UpdateInforComponent implements OnInit {
     // this.user.city = this.viewModel.city;
     // this.user.gender = this.viewModel.gender;
     // this.user.introduction = this.viewModel.introduction;
+    alert('Save success');
     return this.http.put(this.baseUrl + 'users/',  this.user).subscribe();
    // return this.http.post(this.baseUrl + 'register', model);
   }

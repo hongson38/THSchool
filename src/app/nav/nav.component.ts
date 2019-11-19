@@ -32,12 +32,15 @@ export class NavComponent implements OnInit {
     // return !!token;
     return this.authService.loggedIn();
   }
-
+  UpdateInfor() {
+    this.router.navigate(['/updateInfor']);
+  }
   logout() {
     localStorage.removeItem('token');
     this.alertify.message('logged out');
     console.log('logout');
     this.router.navigate(['/home']);
   }
+
 
 }

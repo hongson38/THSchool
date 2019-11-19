@@ -15,17 +15,10 @@
   </div>
 </div> 
 <body>
-<div >
-        <input type="text" placeholder="Number one" [(ngModel)]="model.b" ><br>
-        <input type="text" placeholder="Number two" [(ngModel)]="model.a"><br>
-        <button (click)="updateMesssages()">Add</button>
-</div>
-<p>{{result}}</p>
-
-<form (ngSubmit)="addNumber()">
-    <input type="text" placeholder="Number one" name="son1" [(ngModel)]="son1" ><br>
-    <input type="text" placeholder="Number two" name ="son2"[(ngModel)]="son2"><br>
-    <button type="submit">ssssssswww</button>
+<form (ngSubmit)="addNumber()" >
+    <input type="text" placeholder="Number one"  class="form-control col-md-4" name="son1" [(ngModel)]="son1" ><br>
+    <input type="text" placeholder="Number two" class="form-control col-md-4" name ="son2"[(ngModel)]="son2"><br>
+    <button type="submit" class="btn btn-danger">Add</button>
 </form>
 <p>Div From Body in Home component</p>
 </body>

@@ -6,6 +6,7 @@ import { Photo } from '../_models/photo';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NgForm, FormArray, FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { environment } from 'src/environments/environment';
+import { AlertifyService } from '../_services/alertify.service';
 
 @Component({
   selector: 'app-deletelistuser',
@@ -15,7 +16,7 @@ import { environment } from 'src/environments/environment';
 export class DeletelistuserComponent implements OnInit {
 
 
-  constructor( private router: ActivatedRoute, private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private router: ActivatedRoute, private alertify: AlertifyService, private fb: FormBuilder, private http: HttpClient) { }
   users: User[];
   arr: any = {};
   listIdUser = [];
@@ -30,14 +31,37 @@ export class DeletelistuserComponent implements OnInit {
     });
   }
   submitDelete() {
-    console.log(this.listIdUser);
+    // console.log(this.listIdUser);
     const options = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'aaa': JSON.stringify(this.listIdUser)
       })
     };
-    return this.http.delete(this.baseUrl + 'users/', options ).subscribe();
+    this.alertify.success('DeleteSuccess');
+    return this.http.delete(this.baseUrl + 'users/', options).subscribe(
+      () => {
+        //   for (let i = 0; i < this.users.length; i++) {
+        //       // tslint:disable-next-line: prefer-for-of
+        //       for (let j = 0; j < this.listIdUser.length; j++) {
+        //         if (this.users[i].userId === this.listIdUser[j]) {
+        //           this.users.splice(this.users.indexOf(this.users[i]), 1);
+        //         }
+        //       }
+        // }
+        // tslint:disable-next-line: prefer-for-of
+        for (let i = 0; i < this.listIdUser.length; i++) {
+          this.users.splice(this.users.findIndex(p => p.userId === this.listIdUser[i]), 1);
+          console.log(this.users.indexOf(this.listIdUser[i]));
+        }
+      }, error => {
+        alert('dmm');
+      },
+      () => {
+        this.listIdUser = [];
+        alert(' Xoa User thanh cong');
+      }
+    );
   }
   onChange(userId: string, isChecked: boolean) {
     const idFormArray = this.myForm.controls.userItem as FormArray;
@@ -48,8 +72,8 @@ export class DeletelistuserComponent implements OnInit {
       const index = idFormArray.controls.findIndex(x => x.value === userId);
       idFormArray.removeAt(index);
       this.listIdUser.splice(index, 1);
-     // this.listIdUser.pop()
+      // this.listIdUser.pop()
     }
   }
-  }
+}
 

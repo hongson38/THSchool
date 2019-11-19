@@ -11,17 +11,18 @@
           <tbody>
             <tr *ngFor="let item of users">
               <td >{{item.username}}</td>
-              <td style="text-align: center;"> <input class="form-control" 
+              <!-- <td style="text-align: center;"> <input class="form-control" 
                 type="checkbox" name="{{item.userId}}" class="form-check-input" id="exampleCheck1" value={{item.userId}}>
-               </td>
+               </td> -->
                <td style="text-align: center;"> <input class="form-control" 
                 type="checkbox" (change)="onChange(item.userId, $event.target.checked)">
                </td>
             </tr>
           </tbody>
         </table>
-        <button type="submit"> Delete </button>
+        <button type="submit" class="btn btn-danger" style="margin-left: 45%;"> Delete </button>
   </form>
   <p *ngFor="let item of listIdUser">{{item}}
   </p>
 </div>
+
