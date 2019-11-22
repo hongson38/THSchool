@@ -32,7 +32,11 @@ export class ListsComponent implements OnInit {
 
 
   ngOnInit() {
-    this.loadUsers();
+    // this.loadUsers();
+    this.route.data.subscribe(data => {
+      this.users = data.users;
+    });
+    // console.log('Xin chao ban ,da get d cdata');
   }
 
   updateMesssages() {
@@ -43,11 +47,16 @@ export class ListsComponent implements OnInit {
   }
 
   loadUsers() {
-    this.userService.getUsers().subscribe((users: User[]) => {
-      this.users = users;
-    }, error => {
-      console.log('bbbbbbbbb');
-    }
-    );
+    // this.userService.getUsers().subscribe((users: User[]) => {
+    //   this.users = users;
+    // }, error => {
+    //   console.log('bbbbbbbbb');
+    // }
+    // );
+
+    // this.route.data.subscribe(data => {
+    //   // this.users = data['users'].result;
+    //    this.users = data.users;
+    //  });
   }
 }

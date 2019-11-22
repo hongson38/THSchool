@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule, PaginationModule } from 'ngx-bootstrap';
 
 import { JwtModule } from '@auth0/angular-jwt';
 import { AppRoutingModule } from './app-routing.module';
@@ -59,6 +59,8 @@ export function tokenGetter() {
       FormsModule,
       // importtoshowdropdownlistinlistComponent,
       ReactiveFormsModule,
+      // import pagelist frontend in memberlist
+      PaginationModule.forRoot(),
 
       TabsModule.forRoot(),
       BsDropdownModule.forRoot(),
@@ -73,6 +75,10 @@ export function tokenGetter() {
       })
    ],
    providers: [
+      // {
+      //    provide: AuthService,
+      //    useClass: AuthService
+      // },
       AuthService,
       ErrorInterceptorProvider,
       AlertifyService,

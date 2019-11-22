@@ -24,7 +24,7 @@ export class DeletelistuserComponent implements OnInit {
   baseUrl = environment.apiUrl;
   ngOnInit() {
     this.router.data.subscribe(data => {
-      this.users = data.users;
+      this.users = data.users.result;
     });
     this.myForm = this.fb.group({
       userItem: this.fb.array([])
@@ -55,7 +55,7 @@ export class DeletelistuserComponent implements OnInit {
           console.log(this.users.indexOf(this.listIdUser[i]));
         }
       }, error => {
-        alert('dmm');
+        alert('You not choose select in list ?');
       },
       () => {
         this.listIdUser = [];
@@ -72,7 +72,6 @@ export class DeletelistuserComponent implements OnInit {
       const index = idFormArray.controls.findIndex(x => x.value === userId);
       idFormArray.removeAt(index);
       this.listIdUser.splice(index, 1);
-      // this.listIdUser.pop()
     }
   }
 }

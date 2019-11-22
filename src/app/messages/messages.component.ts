@@ -18,19 +18,34 @@ export class MessagesComponent implements OnInit {
   oneUserResponse: User;
   listOrderByUser01: User[];
   idUser: number;
-  constructor(public fb: FormBuilder, private userService: UserService) {}
+  constructor(public fb: FormBuilder, private route: ActivatedRoute, private userService: UserService) {}
 
   name123 = this.fb.group({
     name: ['']
   });
 
   ngOnInit() {
-    this.loadUsers();
+    // this.loadUsers();
+    // console.log('helo baybe2323232323');
+    this.route.data.subscribe(data => {
+      // this.users = data['users'].result;
+        this.users = data.users.result;
+        console.log(this.users);
+        console.log('log data in message');
+     });
+
+
   }
   loadUsers() {
-    this.userService.getUsers().subscribe((users123: User[]) => {
-      this.users = users123;
-    }, error => {});
+    // this.userService.getUsers().subscribe((users123: User[]) => {
+    //   this.users = users123;
+    // }, error => {});
+    this.route.data.subscribe(data => {
+      // this.users = data['users'].result;
+       this.users = data.users.result;
+       console.log( this.users);
+       console.log('helo baybe');
+     });
   }
   onChange(deviceValue) {
     console.log(deviceValue);
