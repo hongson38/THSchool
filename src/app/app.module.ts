@@ -30,6 +30,11 @@ import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { UpdateInforComponent } from './updateInfor/updateInfor.component';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { DeletelistuserComponent } from './deletelistuser/deletelistuser.component';
+import { CategoryComponent } from './category/category.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -50,7 +55,8 @@ export function tokenGetter() {
       MemberDetailComponent,
       MemberListComponent,
       UpdateInforComponent,
-      DeletelistuserComponent
+      DeletelistuserComponent,
+      CategoryComponent
    ],
    imports: [
       BrowserModule,
@@ -61,6 +67,9 @@ export function tokenGetter() {
       ReactiveFormsModule,
       // import pagelist frontend in memberlist
       PaginationModule.forRoot(),
+      // add to show datetimePicker
+      MatDatepickerModule,
+      NgbModule,
 
       TabsModule.forRoot(),
       BsDropdownModule.forRoot(),
@@ -72,7 +81,8 @@ export function tokenGetter() {
             whitelistedDomains: ['localhost:5001'],
             blacklistedRoutes: ['localhost:5001/api/auth']
          }
-      })
+      }),
+   BrowserAnimationsModule
    ],
    providers: [
       // {
