@@ -7,5 +7,6 @@ export interface Category {
     timeCreated: Date;
     personCreateUserId: number;
     timeUpdate: Date;
+    classRoomID: number;
 }
 
